@@ -1,0 +1,349 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.10f1 (ff3792e53c62) revision 16725906'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Education' Language: 'en' Physical Memory: 32604 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+54572
+Successfully changed project path to: E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene
+E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [14276] Host "[IP] 192.168.5.111 [Port] 0 [Flags] 2 [Guid] 136429304 [EditorId] 136429304 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6E4HN7O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [14276] Host "[IP] 192.168.5.111 [Port] 0 [Flags] 2 [Guid] 136429304 [EditorId] 136429304 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6E4HN7O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 19 workers.
+Refreshing native plugins compatible for Editor in 4.24 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.10f1 (ff3792e53c62)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4070 Ti (ID=0x2782)
+    Vendor:   NVIDIA
+    VRAM:     12010 MB
+    Driver:   31.0.15.3758
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56508
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004559 seconds.
+- Loaded All Assemblies, in  0.253 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.136 seconds
+Domain Reload Profiling: 389ms
+	BeginReloadAssembly (81ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (106ms)
+		LoadAssemblies (80ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (104ms)
+			TypeCache.Refresh (103ms)
+				TypeCache.ScanAssembly (92ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (136ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (104ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (68ms)
+			ProcessInitializeOnLoadMethodAttributes (27ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.471 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.451 seconds
+Domain Reload Profiling: 921ms
+	BeginReloadAssembly (102ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (15ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (319ms)
+		LoadAssemblies (261ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (120ms)
+			TypeCache.Refresh (102ms)
+				TypeCache.ScanAssembly (91ms)
+			ScanForSourceGeneratedMonoScriptInfo (12ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (451ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (352ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (271ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4930 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 74 unused Assets / (0.8 MB). Loaded Objects now: 5381.
+Memory consumption went from 196.1 MB to 195.3 MB.
+Total: 3.371900 ms (FindLiveObjects: 0.215200 ms CreateObjectMapping: 0.063700 ms MarkObjects: 2.815700 ms  DeleteObjects: 0.276600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 26412.692565 seconds.
+  path: Assets/MyMaterial/Sea/plane.fbx
+  artifactKey: Guid(4f3f86912e3cbf64d9f922c94cfce51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyMaterial/Sea/plane.fbx using Guid(4f3f86912e3cbf64d9f922c94cfce51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7bba452cfa444b9ffe2524c97ed63de') in 0.180935 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 19.887577 seconds.
+  path: Assets/MyMaterial/Sea/plane.fbx
+  artifactKey: Guid(4f3f86912e3cbf64d9f922c94cfce51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyMaterial/Sea/plane.fbx using Guid(4f3f86912e3cbf64d9f922c94cfce51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '687ae26eb4f3c2087e10094ef8689916') in 0.009872 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 13.020626 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Beak.mat
+  artifactKey: Guid(e52772856f0a8224796ac88a1193b8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Beak.mat using Guid(e52772856f0a8224796ac88a1193b8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0757d4aa42fd680b42ce2e5f706a8a68') in 0.017082 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.020349 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Deep Water.mat
+  artifactKey: Guid(db3fab14a26ef7049973fad1268241b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Deep Water.mat using Guid(db3fab14a26ef7049973fad1268241b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bae361e46ed6cb0d3c51c62fefbf136') in 0.010415 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.026189 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Fruit 1.mat
+  artifactKey: Guid(6aa61052ebbda5640813aec37eb6f5b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Fruit 1.mat using Guid(6aa61052ebbda5640813aec37eb6f5b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9e73d95676d18443bd874fb80fb194e') in 0.009346 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.025088 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Flower 1.mat
+  artifactKey: Guid(380454b11933bc645b7b17da58f3b9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Flower 1.mat using Guid(380454b11933bc645b7b17da58f3b9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92ac186f9c08c595c6a57420790124e2') in 0.008557 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Sail.mat
+  artifactKey: Guid(6892cad091c09e74089dab0d64ee91af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Sail.mat using Guid(6892cad091c09e74089dab0d64ee91af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ff95da27bfe5a5ca5869cf49d4455e3') in 0.021734 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Sky.mat
+  artifactKey: Guid(2cffcbc3ab818f34b97930cd2018029f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Sky.mat using Guid(2cffcbc3ab818f34b97930cd2018029f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce70bffac37cea5e08c33f1c8dc95c4d') in 0.009269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Sand.mat
+  artifactKey: Guid(36cf94deba65e9c43bbb46573e3bc06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Sand.mat using Guid(36cf94deba65e9c43bbb46573e3bc06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bba17ff7b7e8a67a63d05414c5cb66d') in 0.013596 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Gull 2.mat
+  artifactKey: Guid(3e98cedf5e2ffbd48af17a25d7137745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Gull 2.mat using Guid(3e98cedf5e2ffbd48af17a25d7137745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f36d36d266e02d8e22fa73caa52fec3') in 0.006678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/House 1.mat
+  artifactKey: Guid(2fb9919b62946ce418fb6ef0366d7a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/House 1.mat using Guid(2fb9919b62946ce418fb6ef0366d7a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41a3a25fb05e9237501e6f948bc1cdff') in 0.007538 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Leaves 1.mat
+  artifactKey: Guid(37bd71969a204c14d97ad69f32764007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Leaves 1.mat using Guid(37bd71969a204c14d97ad69f32764007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e564f7c4e8570dbd8fd448c8bb23c3a') in 0.005228 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Leaves.mat
+  artifactKey: Guid(784e8365145250b4faaa50110a6eae66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Leaves.mat using Guid(784e8365145250b4faaa50110a6eae66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac9c4dfcf7bea40bdc02f5f1fc3a1345') in 0.007563 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Wood 4.mat
+  artifactKey: Guid(c7ff693cfdd8dbc42a63b5c05cf60f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Wood 4.mat using Guid(c7ff693cfdd8dbc42a63b5c05cf60f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e4437af54b1669538f3706c2fd2ef6') in 0.007517 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Wood 3.mat
+  artifactKey: Guid(39a8ecf8cc9f43e44b25746d236c8c76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Wood 3.mat using Guid(39a8ecf8cc9f43e44b25746d236c8c76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77e3b03c4ca4faac5d7358d10701de08') in 0.006973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Wood 2.mat
+  artifactKey: Guid(d4e0198bddb20134da42a3d613064891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Wood 2.mat using Guid(d4e0198bddb20134da42a3d613064891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90c9aeb69e638aad50a7c74ffda44153') in 0.005873 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Rock 1.mat
+  artifactKey: Guid(b55f9aed1459591468991ddb4b756b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Rock 1.mat using Guid(b55f9aed1459591468991ddb4b756b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a7615c58df1a28a395e0de9111ab72') in 0.006468 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Smoke.mat
+  artifactKey: Guid(2294328091a31fa4f86c33775e4c550e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Smoke.mat using Guid(2294328091a31fa4f86c33775e4c550e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '753aeb569b0a293c7d5e67953aa2be6a') in 0.006503 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Gull 1.mat
+  artifactKey: Guid(ca280723a042c08478eedf9f424e4b78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Gull 1.mat using Guid(ca280723a042c08478eedf9f424e4b78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec16242b951090844cbc1f32b886a73a') in 0.010915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Java - Low Poly Islands/Contents/Materials/Sky 1.mat
+  artifactKey: Guid(6d19768bcab56ba4b811334f96be5af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Java - Low Poly Islands/Contents/Materials/Sky 1.mat using Guid(6d19768bcab56ba4b811334f96be5af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e52221332846bd06c071eb81d405dd') in 0.009086 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
