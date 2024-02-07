@@ -1,0 +1,102 @@
+#pragma kernel Wave
+#pragma kernel Swap
+//https://web.archive.org/web/20160418004149/http://freespace.virgin.net/hugo.elias/graphics/x_water.htm
+//X
+RWTexture2D<float4> _WaveRT;
+
+struct ForceStruct {
+    float2 pos;
+    float radius;
+    float2 direction;
+    float intensity;
+};
+
+StructuredBuffer<ForceStruct> forcePosBuffer;
+int forceCount;
+float disappearStep;
+
+float damping = 0.99;
+#include "../DataAndTools/AnyTrailComputeInclude.hlsl"
+
+//传入角色移动的大小，根据移动采样上一帧的轨迹图，得到这一帧的轨迹图
+//x:这一帧的轨迹图,y:上一帧的轨迹图,z:下一帧的轨迹图
+[numthreads(8,8,1)]
+void Wave(uint3 id : SV_DispatchThreadID)
+{
+    float4 rt = _WaveRT[id.xy];
+    float thisFrameMid = rt.x;
+    float thisFrameUp = _WaveRT[float2(id.x, id.y + 1)].x;
+    float thisFrameDown = _WaveRT[float2(id.x, id.y - 1)].x;
+    float thisFrameLeft = _WaveRT[float2(id.x - 1, id.y)].x;
+    float thisFrameRight = _WaveRT[float2(id.x + 1, id.y)].x;
+    float lastFrameMid = rt.y;
+
+    //对每一个力进行计算
+    for (int i = 0; i < forceCount; i++)
+    {
+        const int radius = max(forcePosBuffer[i].radius,0.1f);
+        int2 pos = forcePosBuffer[i].pos;
+        const float intensity = forcePosBuffer[i].intensity;
+
+        if (intensity > 0)
+        {
+            if (distance(float2((int)id.x,(int)id.y + 1 ), pos.xy)<=radius)
+            {
+                thisFrameUp = intensity;
+            }
+            else if (distance(float2((int)id.x,(int)id.y - 1 ), pos.xy)<=radius)
+            {
+                thisFrameDown = intensity;
+            }
+            else if (distance(float2((int)id.x - 1,(int)id.y ), pos.xy)<=radius)
+            {
+                thisFrameLeft = intensity;
+            }
+            else if (distance(float2((int)id.x + 1,(int)id.y ), pos.xy)<=radius)
+            {
+                thisFrameRight = intensity;
+            }
+            else if (distance(float2((int)id.x,(int)id.y ), pos.xy)<=radius)
+            {
+                thisFrameMid = intensity;
+            }
+
+            //
+            //
+            // if ((int)id.x == pos.x && (int)id.y + 1 == pos.y)
+            // {
+            //     thisFrameUp = intensity;
+            // }
+            // else if ((int)id.x == pos.x && (int)id.y - 1 == pos.y)
+            // {
+            //     thisFrameDown = intensity;
+            // }
+            // else if ((int)id.x - 1 == pos.x && (int)id.y == pos.y)
+            // {
+            //     thisFrameLeft = intensity;
+            // }
+            // else if ((int)id.x + 1 == pos.x && (int)id.y == pos.y)
+            // {
+            //     thisFrameRight = intensity;
+            // }
+            // else if ((int)id.x == pos.x && (int)id.y == pos.y)
+            // {
+            //     thisFrameMid = intensity;
+            // }
+        }
+    }
+
+    float nextFrameMid = (thisFrameUp + thisFrameDown + thisFrameLeft + thisFrameRight) / 2 - lastFrameMid;
+    nextFrameMid *= damping;
+
+    _WaveRT[id.xy] = float4(thisFrameMid, lastFrameMid, nextFrameMid, 0);
+}
+
+
+//x:下一帧的轨迹图 ,y:这一帧的轨迹图,z:0
+[numthreads(8,8,1)]
+void Swap(uint3 id : SV_DispatchThreadID)
+{
+    float4 wave = _WaveRT[id.xy];
+    _WaveRT[id.xy] = float4(wave.z, wave.x, 0, 0);
+}

@@ -1,0 +1,24 @@
+#pragma kernel MoveMapWithPeople
+#pragma kernel WriteBackCanvasAfterMove
+
+RWTexture2D<float4> MoveTrailRT;
+RWTexture2D<float4> OriginalTrailRT;
+
+float2 positionCenterMove;
+#include "../DataAndTools/AnyTrailComputeInclude.hlsl"
+
+//传入角色移动的大小，根据移动采样上一帧的轨迹图，得到这一帧的轨迹图
+[numthreads(8,8,1)]
+void MoveMapWithPeople(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = id.xy + positionCenterMove;
+    float4 rtMove = sampleBilinearInterpolation(pos, OriginalTrailRT); 
+    MoveTrailRT[id.xy] = float4(rtMove.xyzw);
+}
+
+//将速度场替换为移动后的速度场
+[numthreads(8,8,1)]
+void WriteBackCanvasAfterMove(uint3 id : SV_DispatchThreadID)
+{
+    OriginalTrailRT[id.xy] = MoveTrailRT[id.xy];
+}
