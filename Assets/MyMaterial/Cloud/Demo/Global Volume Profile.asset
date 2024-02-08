@@ -1,0 +1,248 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8797831758913661356
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  skipIterations:
+    m_OverrideState: 0
+    m_Value: 1
+  threshold:
+    m_OverrideState: 0
+    m_Value: 0.9
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.27
+  scatter:
+    m_OverrideState: 0
+    m_Value: 0.7
+  clamp:
+    m_OverrideState: 0
+    m_Value: 65472
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  highQualityFiltering:
+    m_OverrideState: 0
+    m_Value: 0
+  downscale:
+    m_OverrideState: 0
+    m_Value: 0
+  maxIterations:
+    m_OverrideState: 0
+    m_Value: 6
+  dirtTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  dirtIntensity:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &-8741919681417581527
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  color:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.25
+  smoothness:
+    m_OverrideState: 0
+    m_Value: 0.2
+  rounded:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &-8646091827501034898
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  postExposure:
+    m_OverrideState: 1
+    m_Value: 0.5
+  contrast:
+    m_OverrideState: 1
+    m_Value: 15
+  colorFilter:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  hueShift:
+    m_OverrideState: 1
+    m_Value: -5
+  saturation:
+    m_OverrideState: 1
+    m_Value: 10
+--- !u!114 &-6446540029592084553
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
+  m_Name: Tonemapping
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 1
+    m_Value: 2
+  neutralHDRRangeReductionMode:
+    m_OverrideState: 0
+    m_Value: 2
+  acesPreset:
+    m_OverrideState: 0
+    m_Value: 3
+  hueShiftAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  detectPaperWhite:
+    m_OverrideState: 0
+    m_Value: 0
+  paperWhite:
+    m_OverrideState: 0
+    m_Value: 300
+  detectBrightnessLimits:
+    m_OverrideState: 0
+    m_Value: 1
+  minNits:
+    m_OverrideState: 0
+    m_Value: 0.005
+  maxNits:
+    m_OverrideState: 0
+    m_Value: 1000
+--- !u!114 &-1402680705760771371
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a3f0580e82b774289eebfc37cfac5f, type: 3}
+  m_Name: PPVolumeCloud
+  m_EditorClassIdentifier: 
+  active: 1
+  RaySteps:
+    m_OverrideState: 1
+    m_Value: 34
+  RayStepLength:
+    m_OverrideState: 1
+    m_Value: 38.1
+  CloudDensityScale:
+    m_OverrideState: 1
+    m_Value: 0.01
+  CloudDensityAdd:
+    m_OverrideState: 1
+    m_Value: 0
+  BoxMin:
+    m_OverrideState: 1
+    m_Value: {x: 0, y: 49.8, z: 86}
+  BoxMax:
+    m_OverrideState: 1
+    m_Value: {x: 1044, y: 254.38, z: 1142}
+  SkymaskNoiseScale:
+    m_OverrideState: 1
+    m_Value: 2.13
+  SkymaskNoiseBias:
+    m_OverrideState: 1
+    m_Value: {x: 146.99, y: 1.18}
+  DensityNoiseScale:
+    m_OverrideState: 1
+    m_Value: 0.164
+  DensityNoiseBias:
+    m_OverrideState: 1
+    m_Value: {x: 10.7, y: 25.1}
+  DensityNoiseWeight:
+    m_OverrideState: 1
+    m_Value: {x: 0.62, y: 0, z: 0.46, w: 0.61}
+  DetailNoiseScale:
+    m_OverrideState: 1
+    m_Value: 0.031
+  DetailNoiseWeight:
+    m_OverrideState: 1
+    m_Value: 3.93
+  MoveSpeedShape:
+    m_OverrideState: 1
+    m_Value: 14.86
+  MoveSpeedDetail:
+    m_OverrideState: 1
+    m_Value: -0.3
+  xy_MoveSpeedSky_z_MoveMask_w_ScaleMask:
+    m_OverrideState: 1
+    m_Value: {x: -0.3, y: 0.02, z: 5, w: 1}
+  LightAbsorptionTowardSun:
+    m_OverrideState: 1
+    m_Value: 4.4
+  LightEnergyScale:
+    m_OverrideState: 1
+    m_Value: 16.4
+  CloudMidColor:
+    m_OverrideState: 1
+    m_Value: {r: 2.9606555, g: 2.9606555, b: 2.9606555, a: 1}
+  CloudDarkColor:
+    m_OverrideState: 1
+    m_Value: {r: 0.16981131, g: 0.13857244, b: 0.10493057, a: 1}
+  ColorOffset1:
+    m_OverrideState: 1
+    m_Value: 0.1
+  ColorOffset2:
+    m_OverrideState: 1
+    m_Value: 1.08
+  DarknessThreshold:
+    m_OverrideState: 1
+    m_Value: 0.68
+  HG:
+    m_OverrideState: 1
+    m_Value: 0.523
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: Global Volume Profile
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -6446540029592084553}
+  - {fileID: -8646091827501034898}
+  - {fileID: -8741919681417581527}
+  - {fileID: -8797831758913661356}
+  - {fileID: -1402680705760771371}

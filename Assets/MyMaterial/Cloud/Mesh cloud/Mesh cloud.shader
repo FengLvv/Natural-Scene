@@ -4,12 +4,9 @@
     {
         _3Dnoise("3Dnoise_XYZmove_Wscale", 3D) = "white" {}
         _3DnoiseDetail("3DnoiseDetail_XYZmove_Wscale", 3D) = "white" {}
-        _BaseMap ("BaseMap", 2D) = "white" {}
         _MooveSpeed("MooveSpeed",Range(0, 64))=1
         _ColorDark("ColorDark",Color)=(0,0,0,1)
         [HDR] _ColorLight("ColorLight",Color)=(1,1,1,1)
-        _MaxDistance("MaxDistance",Range(0, 500))=500
-
         _TessellationFactor("_TessellationFactor",Range(0, 64))=1
         _BumpShape("_BumpShape",Float)=5
         _BumpDetail("_BumpDetail",Float)=5
@@ -25,8 +22,8 @@
     SAMPLER(sampler_3Dnoise);
     TEXTURE3D(_3DnoiseDetail);
     SAMPLER(sampler_3DnoiseDetail);
-    TEXTURE2D(_ScreenDepth);
-    SAMPLER(sampler_ScreenDepth);
+    TEXTURE2D(_CameraDepthTexture);
+    SAMPLER(sampler_CameraDepthTexture);
 
     CBUFFER_START(UnityPerMaterial)
         float4 _BaseColor;
@@ -38,7 +35,6 @@
         float4 _3DnoiseDetail_ST;
         float4 _ColorDark;
         float4 _ColorLight;
-        float _MaxDistance;
     CBUFFER_END
 
     struct Attributes {
@@ -80,7 +76,6 @@
         float4 positionNDC : TEXCOORD2;
         float2 uv : TEXCOORD0;
         float3 normal : NORMAL;
-        float4 color : COLOR;
     };
 
 
@@ -99,26 +94,33 @@
         return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
 
-    //根据距离计算细分因子
-    float CalculateTessellationFactorByDistance(float3 posOS)
+    float TessellationEdgeFactor(
+        TessellationInput cp0, TessellationInput cp1
+    )
     {
-        float3 camPosWS = GetCameraPositionWS();
-        float maxDistance = _MaxDistance;
-        float cameraDistance = clamp(distance(camPosWS, TransformObjectToWorld(posOS)), 0, maxDistance);
-        float tessellationFactor = Remap(cameraDistance * cameraDistance, 0, maxDistance * maxDistance, _TessellationFactor, 1);
-        return tessellationFactor;
+        //获取世界坐标长度
+        float3 p0 = mul(unity_ObjectToWorld, float4(cp0.positionOS.xyz, 1)).xyz;
+        float3 p1 = mul(unity_ObjectToWorld, float4(cp1.positionOS.xyz, 1)).xyz;
+        //获取边的中点
+        float3 edgeCenter = (p0 + p1) * 0.5;
+        float edgeLength = distance(p0, p1);
+        //计算中点到相机的距离
+        float viewDistance = distance(edgeCenter, _WorldSpaceCameraPos);
+        //返回两个相除（一个正比一个反比）
+        return _TessellationFactor * saturate(edgeLength / (3 * viewDistance)) + 1;
     }
+
 
     TessellationFactor PCF(InputPatch<TessellationInput, 3> patch)
     {
         TessellationFactor f;
 
         //这里控制不同边和内部的细分次数
-        float facotr0 = CalculateTessellationFactorByDistance(patch[0].positionOS);
+        float facotr0 = TessellationEdgeFactor(patch[1], patch[2]);
         f.edge[0] = facotr0;
-        float facotr1 = CalculateTessellationFactorByDistance(patch[1].positionOS);
+        float facotr1 = TessellationEdgeFactor(patch[0], patch[2]);
         f.edge[1] = facotr1;
-        float facotr2 = CalculateTessellationFactorByDistance(patch[2].positionOS);
+        float facotr2 = TessellationEdgeFactor(patch[0], patch[1]);
         f.edge[2] = facotr2;
         float factorIn = (facotr0 + facotr1 + facotr2) / 3;
         f.inside = factorIn;
@@ -127,7 +129,7 @@
 
 
     [domain("tri")]                 //确定图元：quad,triangle，isoline（等值线）
-    [partitioning("integer")]       //曲面细分的模式：integer,pow2,fractional_even,fractional_odd
+    [partitioning("pow2")]          //曲面细分的模式：integer,pow2,fractional_even,fractional_odd
     [outputtopology("triangle_cw")] //创建三角形绕序：triangle_cw,triangle_ccw,line（对线段细分）
     [outputcontrolpoints(3)]        //输出控制点的数量
     [patchconstantfunc("PCF")]      //PCF函数，用来计算细分因子
@@ -145,9 +147,9 @@
 
     [domain("tri")] //声明域是一个三角形
     //传入factor，顶点数据，新顶点的重心坐标
-    TessellationOutput domain(TessellationFactor patchTess, float3 bary: SV_DomainLocation, const OutputPatch<HullOutput, 3> patch)
+    Varyings domain(TessellationFactor patchTess, float3 bary: SV_DomainLocation, const OutputPatch<HullOutput, 3> patch)
     {
-        TessellationOutput output;
+        Varyings output;
 
         //其他属性（如多个uv,normal,tangent）也是一样的操作
         float3 posOS = patch[0].positionOS * bary.x + patch[1].positionOS * bary.y + patch[2].positionOS * bary.z;
@@ -159,55 +161,20 @@
         float noise3DShape = SAMPLE_TEXTURE3D_LOD(_3Dnoise, sampler_3Dnoise, samplePosShape, 0).r;
         float noise3DDetail = SAMPLE_TEXTURE3D_LOD(_3DnoiseDetail, sampler_3DnoiseDetail, samplePosDetail, 0).r;
 
-        output.positionOS = posOS + normal *  (noise3DShape * 0.5 *_BumpShape + noise3DDetail * 0.1 * _BumpDetail);
+        float3 positionOS = posOS + normal * (noise3DShape * 0.5 * _BumpShape + noise3DDetail * 0.1 * _BumpDetail);
+        VertexPositionInputs v = GetVertexPositionInputs(positionOS);
+        output.positionCS = v.positionCS;
+        output.positionWS = v.positionWS;
+        output.positionNDC = v.positionNDC;
         output.uv = uv;
         output.normal = normal;
         return output;
     }
 
-    [maxvertexcount(3)]
-    void geo(triangle TessellationOutput IN[3], inout TriangleStream<Varyings> triStream)
-    {
-        Varyings o;
-        float3 dir1 = IN[1].positionOS - IN[0].positionOS;
-        float3 dir2 = IN[2].positionOS - IN[0].positionOS;
-        float3 normal = normalize(cross(dir1, dir2));
-
-        VertexPositionInputs v0 = GetVertexPositionInputs(IN[0].positionOS);
-        o.positionCS = v0.positionCS;
-        o.positionWS = v0.positionWS;
-        o.positionNDC = v0.positionNDC;
-        o.uv = IN[0].uv;
-        o.normal = TransformObjectToWorldNormal(IN[0].normal);
-        o.color = float4(1, 0, 0, 0);
-        triStream.Append(o);
-
-        VertexPositionInputs v1 = GetVertexPositionInputs(IN[1].positionOS);
-        o.positionCS = v1.positionCS;
-        o.positionWS = v1.positionWS;
-        o.positionNDC = v1.positionNDC;
-        o.uv = IN[1].uv;
-        o.normal = TransformObjectToWorldNormal(IN[1].normal);
-        o.color = float4(0, 1, 0, 0);
-        triStream.Append(o);
-
-
-        VertexPositionInputs v2 = GetVertexPositionInputs(IN[2].positionOS);
-        o.positionCS = v2.positionCS;
-        o.positionWS = v2.positionWS;
-        o.positionNDC = v2.positionNDC;
-
-
-        o.uv = IN[2].uv;
-        o.normal = TransformObjectToWorldNormal(IN[2].normal);
-        o.color = float4(0, 0, 1, 0);
-        triStream.Append(o);
-    }
-
     float3 GetPixelWorldPosition(float2 uv)
     {
         //获得深度数据
-        half4 blitDepth = SAMPLE_TEXTURE2D_X(_ScreenDepth, sampler_ScreenDepth, uv); //采样blitter纹理
+        half4 blitDepth = SAMPLE_TEXTURE2D_X(_CameraDepthTexture, sampler_CameraDepthTexture, uv); //采样blitter纹理
         //重建世界坐标深度
         float depthValue = Linear01Depth(blitDepth, _ZBufferParams);
         //重建世界坐标
@@ -224,18 +191,11 @@
 
     half4 frag(Varyings IN) : SV_Target
     {
-        //线框
-        float color1 = IN.color.x;
-        color1 = step(color1 / fwidth(color1), 0.5);
-        float color2 = IN.color.y;
-        color2 = step(color2 / fwidth(color2), 0.5);
-        float color3 = IN.color.z;
-        color3 = step(color3 / fwidth(color3), 0.5);
-        float outline = max(max(color1, color2), color3);
-
         float3 normalWS = IN.normal;
         Light mainLight = GetMainLight();
         float3 lightDirWS = mainLight.direction;
+        float3 lightCol = lerp(mainLight.color, _ColorLight.xyz, _ColorLight.w);
+        float3 darkCol = lerp(mainLight.color, _ColorDark.xyz, _ColorDark.w);
 
         //lambert
         float3 lambert = max(dot(normalWS, lightDirWS), 0);
@@ -256,17 +216,18 @@
 
         // finalLit=smoothNdotV*0.5+scatterCol+lambert;
 
-        float3 cloudCol = lerp(_ColorDark, _ColorLight, finalLit);
+        float3 cloudCol = lerp(darkCol, lightCol, finalLit);
 
         float2 screenUV = IN.positionNDC.xy / IN.positionNDC.w;
         float3 screenPosWS = GetPixelWorldPosition(screenUV);
-        float distanceToScreenPos=distance(screenPosWS,IN.positionWS);
+        float distanceToScreenPos = distance(screenPosWS, IN.positionWS);
 
-        float transParentToObject=saturate(Remap(distanceToScreenPos,1,5,0,1));
+        float transParentToObject = saturate(Remap(distanceToScreenPos, 1, 60, 0, 1));
+
         float4 color = 1;
-        color.a=transParentToObject;
+
+        color.a = transParentToObject;
         color.xyz = cloudCol;
-        color.xyz = lerp(color, color*0.5 , outline);
 
         return color;
     }
@@ -283,7 +244,7 @@
 
         Pass
         {
-            Blend SrcAlpha OneMinusSrcAlpha 
+            Blend SrcAlpha OneMinusSrcAlpha
 
             Name "TessellationCloud"
             Tags
@@ -295,7 +256,6 @@
             #pragma vertex vert
             #pragma hull hull
             #pragma domain domain
-            #pragma geometry geo
             #pragma fragment frag
             ENDHLSL
         }

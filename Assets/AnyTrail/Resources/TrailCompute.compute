@@ -1,0 +1,54 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel DrawTrail
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float> _TrailRT;
+
+struct ForceStruct {
+    float2 pos;
+    float radius;
+    float2 direction;
+    float intensity;
+};
+
+StructuredBuffer<ForceStruct> forcePosBuffer;
+int forceCount;
+float trailDisappearStep;
+
+//根据轨迹点的位置和半径，将轨迹点的写入轨迹图
+[numthreads(8,8,1)]
+void DrawTrail(uint3 id : SV_DispatchThreadID)
+{
+    float trailTex = _TrailRT[id.xy] - trailDisappearStep;
+    if (trailTex < 0)
+        trailTex = 0;
+
+    float color=trailTex;
+    //如果人物移动，轨迹图更新为Move的图，否则取Add的图
+    for (int i = 0; i < forceCount; i++)
+    {
+        int radius = forcePosBuffer[i].radius;
+        int2 pos = forcePosBuffer[i].pos;
+        float dist = distance(id.xy, pos.xy);
+        float intensity = forcePosBuffer[i].intensity;
+
+        if (dist < radius)
+        {
+            float x = (radius - dist) / radius;
+            float depth;
+
+            //画轨迹图的函数，周围到中心 0->1
+            if (x > 0.33)
+                depth = 1;
+            else if (x < 0)
+                depth = 0;
+            else
+                depth = 3 * x * x * (3 - 6 * x);
+
+            
+            color = max(trailTex, intensity / 100 * depth);                       
+        }
+    }
+    _TrailRT[id.xy] = color;
+}

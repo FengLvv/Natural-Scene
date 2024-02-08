@@ -3,10 +3,9 @@
     Properties
     {
         _BaseMap ("Example Texture", 2D) = "white" {}
-        _XY_CloudMoveDir ("Cloud Move Direction", Vector) = (0, 1,0,0)
+        _XY_CloudMoveDir ("xy-Cloud Move Direction,z-speed", Vector) = (0, 1,0,0)
         _Layer ("Layer number", Range(10,30)) = 10
-        _Alpha ("Alpha", Range(0,1)) = 0.5
-        _Color ("Color", Color) = (1,1,1,1)
+        [HDR]_Color ("Color", Color) = (1,1,1,1)
     }
 
     HLSLINCLUDE
@@ -20,7 +19,6 @@
         float4 _BaseColor;
         float4 _XY_CloudMoveDir;
         int _Layer;
-        float _Alpha;
         float4 _Color;
     CBUFFER_END
 
@@ -68,7 +66,7 @@
         float2 uvStill = IN.uv;
         //用来采样步进的uv，z储存步进的深度
         float3 uvMove = 0;
-        uvMove.xy = IN.uv - _Time.x * _XY_CloudMoveDir.xy;
+        uvMove.xy = IN.uv - _Time.x * normalize(_XY_CloudMoveDir.xy)*_XY_CloudMoveDir.z;
         uvMove.z = 1; //初始高度在1
 
         //每一帧采样一个静止的噪声，一个移动的噪声，乘出新的噪声
@@ -80,7 +78,7 @@
 
         float previousCloud = moveCloud;
 
-
+        //POM
         for (int i = 1; i < sampleTimes; i++)
         {
             uvMove += viewPerMarchTS; //高度下降，xy步进
@@ -101,8 +99,8 @@
         //采样最终的贴图
         half baseMap = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, finalPos.xy).r * stillCloud;; 
 
-        half rangeClt = baseMap.r + _Alpha * 0.75;
-        half Alpha = abs(smoothstep(rangeClt, _Alpha, 1.0));
+        half rangeClt = baseMap.r + _Color.w * 0.75;
+        half Alpha = abs(smoothstep(rangeClt, _Color.w, 1.0));
         Alpha = Alpha * Alpha * Alpha * Alpha * Alpha;
 
         return half4(baseMap * _Color.rgb * lightColor, Alpha);
@@ -121,7 +119,6 @@
         Pass
         {
             Name "Parallax Cloud"
-            //            Blend SrcAlpha OneMinusSrcAlpha
             Cull Off
             Blend SrcAlpha OneMinusSrcAlpha
             ZTest LEqual

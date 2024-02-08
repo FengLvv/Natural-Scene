@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Volume Cloud
+  m_Shader: {fileID: 4800000, guid: 0a3518de3dd3cb14c87c19b33b635d1b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 11700000, guid: f4aa4fba32961314ca2f18456e4f608f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 11700000, guid: f4aa4fba32961314ca2f18456e4f608f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Darkness: 0.027
+    - _DensityScale: 1
+    - _LightAbsorb: 1.47
+    - _MaxSteps: 10
+    - _MaxStepsCam: 42.4
+    - _MaxStepsLight: 26.1
+    - _Offset: 0
+    - _StepSize: 0.02
+    - _StepSizeCam: 0.0394
+    - _StepSizeLight: 0.0214
+    - _Transmittance: 0.953
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Offset: {r: 0.6, g: 0.49, b: 0.5, a: 0}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []

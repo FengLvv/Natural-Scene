@@ -1,0 +1,29 @@
+#pragma kernel GaussianBlurHorizontal
+#pragma kernel GaussianBlurVertical
+
+RWTexture2D<float4> TargetRT;
+RWTexture2D<float4> TempRT;
+int blurRadius;
+[numthreads(8,8,1)]
+void GaussianBlurHorizontal(uint3 id : SV_DispatchThreadID)
+{
+    float gaussianKernel[5] = {0.0545, 0.2442, 0.4026, 0.2442, 0.0545};
+    float4 gaussianSum = 0.0;
+    for (int i = 0; i < 5; i++)
+    {
+        gaussianSum += TargetRT[id.xy + int2((i - 2) * blurRadius, 0)] * gaussianKernel[i];
+    }
+    TempRT[id.xy] = gaussianSum;
+}
+
+[numthreads(8,8,1)]
+void GaussianBlurVertical(uint3 id : SV_DispatchThreadID)
+{
+    float gaussianKernel[5] = {0.0545, 0.2442, 0.4026, 0.2442, 0.0545};
+    float4 gaussianSum = 0.0;
+    for (int i = 0; i < 5; i++)
+    {
+        gaussianSum += TargetRT[id.xy + int2(0, (i - 2) * blurRadius)] * gaussianKernel[i];
+    }
+    TempRT[id.xy] = gaussianSum;
+}
