@@ -1,0 +1,196 @@
+#pragma kernel Advection_Vzw
+#pragma kernel Diffusion1_Vxy
+#pragma kernel Diffusion2_Vzw
+#pragma kernel Force_Vzw
+#pragma kernel Divergence_Pz
+#pragma kernel Presure1_Py
+#pragma kernel Presure2_Px
+#pragma kernel Gradient_Vxy
+
+#include "../DataAndTools/AnyTrailComputeInclude.hlsl"
+
+#define dx 1.0
+#define dx2 dx*dx
+#define halfrdx (1 / dx * 0.5)
+
+RWTexture2D<float4> _Veloctiy;//veo1:xy，veo2:zw
+RWTexture2D<float4> _CustomTex;
+RWTexture2D<float4> _Presure;
+
+float dt;
+int resolution;
+float advectionSpeed;
+float vscosity;
+float disapperaStep;
+
+struct TrailPosStruct {
+    float2 pos;
+    float radius;
+    float2 direction;
+    float intensity;
+};
+StructuredBuffer<TrailPosStruct> forcePosBuffer;
+int forceCount;
+//advect,xy->zw
+[numthreads(8,8,1)]
+void Advection_Vzw(uint3 id : SV_DispatchThreadID)
+{
+    //采样速度场
+    float4 vel = _Veloctiy[id.xy];
+    //反向采样，得到当前点的上一帧的位置
+    float2 pos = id.xy - vel.xy * dt * advectionSpeed*1.5f ;
+    //将上一个点的速度场采样到当前点
+    float4 color = sampleBilinearInterpolation(pos, _Veloctiy);
+    color*=float4(1-disapperaStep,1-disapperaStep,0,0);
+    //写入到zw通道
+    _Veloctiy[id.xy] = float4(vel.x, vel.y, color.x, color.y);
+
+    _CustomTex[id.xy] = sampleBilinearInterpolation(pos, _CustomTex);
+}
+
+//diffusion:Jacobi iteration,zw->xy
+[numthreads(8,8,1)]
+void Diffusion1_Vxy(uint3 id : SV_DispatchThreadID)
+{
+    float4 vol = _Veloctiy[id.xy];
+    float2 L = _Veloctiy[id.xy - int2(1, 0)].zw;
+    float2 R = _Veloctiy[id.xy + int2(1, 0)].zw;
+    float2 T = _Veloctiy[id.xy + int2(0, 1)].zw;
+    float2 B = _Veloctiy[id.xy - int2(0, 1)].zw;
+    float2 bC = vol.zw;
+
+    float alpha = pow(dx, 2) * dt / (vscosity);
+    float beta = 4 + alpha;
+
+    float2 result = (L + R + T + B + alpha * bC) / beta;
+    _Veloctiy[id.xy] = float4(result.x, result.y, vol.z, vol.w);
+}
+
+//diffusion:Jacobi iteration,xy->zw
+[numthreads(8,8,1)]
+void Diffusion2_Vzw(uint3 id : SV_DispatchThreadID)
+{
+    float4 vol = _Veloctiy[id.xy];
+    float2 L = _Veloctiy[id.xy - int2(1, 0)].xy;
+    float2 R = _Veloctiy[id.xy + int2(1, 0)].xy;
+    float2 T = _Veloctiy[id.xy + int2(0, 1)].xy;
+    float2 B = _Veloctiy[id.xy - int2(0, 1)].xy;
+    float2 bC = vol.xy;
+
+    float alpha = pow(dx, 2) * dt / (vscosity);
+    float beta = 4 + alpha;
+
+    float2 result = (L + R + T + B + alpha * bC) / beta;
+    _Veloctiy[id.xy] = float4(vol.x, vol.y, result.x, result.y);
+}
+
+//force,veo2:zw->zw
+[numthreads(8,8,1)]
+void Force_Vzw(uint3 id : SV_DispatchThreadID)
+{
+    float4 vel = _Veloctiy[id.xy];        
+    //对每一个力进行计算，forceCount是每一帧传入的力的数量
+    for (int i = 0; i < forceCount; i++)
+    {
+        int radius = forcePosBuffer[i].radius;
+        int2 pos = forcePosBuffer[i].pos;
+        float dist = distance(id.xy, pos.xy);
+        if (dist < radius)
+        {
+            float intensity = forcePosBuffer[i].intensity;
+            float2 direction = normalize(forcePosBuffer[i].direction);
+            float2 addForce = direction * exp(-dist * dist / (radius)) * intensity * dt;
+            vel = vel + float4(0, 0, addForce.x, addForce.y);
+            _Veloctiy[id.xy] = vel;
+        }
+    }
+}
+
+//计算压力场
+//divergence of velocity,_Veloctiy.zw->_Presure.z
+[numthreads(8,8,1)]
+void Divergence_Pz(uint3 id : SV_DispatchThreadID)
+{
+    float2 L = _Veloctiy[id.xy - int2(1, 0)].zw;
+    float2 R = _Veloctiy[id.xy + int2(1, 0)].zw;
+    float2 T = _Veloctiy[id.xy + int2(0, 1)].zw;
+    float2 B = _Veloctiy[id.xy - int2(0, 1)].zw;
+    // float2 C = _Veloctiy[id.xy].zw;
+
+    //边界处理
+    if (int(id.x - 1) <= 0)
+        // L = -C;
+        L = float2(0, 0);
+    if (int(id.x + 1) >= resolution)
+        // R = -C;
+        R = float2(0, 0);
+    if (int(id.y + 1) >= resolution)
+        // T = -C;
+        T = float2(0, 0);
+    if (int(id.y - 1) <= 0)
+        // B = -C;
+        B = float2(0, 0);
+    
+    //计算散度
+    float result = halfrdx * (R.x - L.x + T.y - B.y);
+    _Presure[id.xy] = float4(0, 0, result, 0);
+}
+
+//presure:Jacobi iteration,_Presure.x->_Presure.y
+[numthreads(8,8,1)]
+void Presure1_Py(uint3 id : SV_DispatchThreadID)
+{
+    float4 presureMap = _Presure[id.xy];
+
+    float L = _Presure[id.xy - int2(1, 0)].x;
+    float R = _Presure[id.xy + int2(1, 0)].x;
+    float T = _Presure[id.xy + int2(0, 1)].x;
+    float B = _Presure[id.xy - int2(0, 1)].x;
+
+    float bC = presureMap.z;
+
+    float alpha = -dx2;
+    float beta = 4;
+
+    float pressure = (L + R + T + B + alpha * bC) / beta;
+    _Presure[id.xy] = float4(presureMap.x, pressure, presureMap.z, 0);
+}
+
+//presure:Jacobi iteration,_Presure.y->_Presure.x
+[numthreads(8,8,1)]
+void Presure2_Px(uint3 id : SV_DispatchThreadID)
+{
+    float4 presureMap = _Presure[id.xy];
+    float L = _Presure[id.xy - int2(1, 0)].y;
+    float R = _Presure[id.xy + int2(1, 0)].y;
+    float T = _Presure[id.xy + int2(0, 1)].y;
+    float B = _Presure[id.xy - int2(0, 1)].y;
+
+    float bC = presureMap.z;
+
+    float alpha = -dx2;
+    float beta = 4;
+
+    float pressure = (L + R + T + B + alpha * bC) / beta;
+    _Presure[id.xy] = float4(pressure, presureMap.y, presureMap.z, 0);
+}
+
+//gradient of pressure,_Presure.x/Velocity.zw->_Veloctiy.xy
+[numthreads(8,8,1)]
+void Gradient_Vxy(uint3 id : SV_DispatchThreadID)
+{
+    float L = _Presure[id.xy - int2(1, 0)].x;
+    float R = _Presure[id.xy + int2(1, 0)].x;
+    float T = _Presure[id.xy + int2(0, 1)].x;
+    float B = _Presure[id.xy - int2(0, 1)].x;
+    float2 gradientOfPresure = halfrdx * float2(R - L, T - B);
+
+    //有散速度场
+    float4 vel = _Veloctiy[id.xy];
+    float2 divergenceVel = vel.zw;
+    //无散速度场
+    float2 result = divergenceVel - gradientOfPresure;
+
+    _Veloctiy[id.xy] = float4(result.x, result.y, vel.z, vel.w);
+    // _Veloctiy[id.xy] = float4(vel.z, vel.w, vel.z, vel.w);
+}

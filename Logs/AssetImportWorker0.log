@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene
+E:/Study/Unity Study/SRP Study/Natural scene/Sea
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54572
-Successfully changed project path to: E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene
-E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene
+53607
+Successfully changed project path to: E:/Study/Unity Study/SRP Study/Natural scene/Sea
+E:/Study/Unity Study/SRP Study/Natural scene/Sea
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,16 +49,16 @@ E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [14276] Host "[IP] 192.168.5.111 [Port] 0 [Flags] 2 [Guid] 136429304 [EditorId] 136429304 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6E4HN7O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [22184] Host "[IP] 192.168.5.111 [Port] 0 [Flags] 2 [Guid] 92725773 [EditorId] 92725773 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6E4HN7O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [14276] Host "[IP] 192.168.5.111 [Port] 0 [Flags] 2 [Guid] 136429304 [EditorId] 136429304 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6E4HN7O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [22184] Host "[IP] 192.168.5.111 [Port] 0 [Flags] 2 [Guid] 92725773 [EditorId] 92725773 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6E4HN7O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 19 workers.
-Refreshing native plugins compatible for Editor in 4.24 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.65 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.10f1 (ff3792e53c62)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path E:/Study/Unity Study/SRP Study/Natural scene/Natural Scene/Assets
+[Subsystems] Discovering subsystems at path E:/Study/Unity Study/SRP Study/Natural scene/Sea/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -70,36 +70,36 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56508
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56192
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004559 seconds.
-- Loaded All Assemblies, in  0.253 seconds
+Registered in 0.004001 seconds.
+- Loaded All Assemblies, in  0.207 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.136 seconds
-Domain Reload Profiling: 389ms
-	BeginReloadAssembly (81ms)
+Domain Reload Profiling: 343ms
+	BeginReloadAssembly (67ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (23ms)
+	RebuildCommonClasses (19ms)
 	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (36ms)
-	LoadAllAssembliesAndSetupDomain (106ms)
-		LoadAssemblies (80ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (81ms)
+		LoadAssemblies (66ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (104ms)
-			TypeCache.Refresh (103ms)
-				TypeCache.ScanAssembly (92ms)
+		AnalyzeDomain (79ms)
+			TypeCache.Refresh (78ms)
+				TypeCache.ScanAssembly (70ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (136ms)
+	FinalizeReload (137ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
 		SetupLoadedEditorAssemblies (104ms)
@@ -108,8 +108,8 @@ Domain Reload Profiling: 389ms
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
-			ProcessInitializeOnLoadAttributes (68ms)
-			ProcessInitializeOnLoadMethodAttributes (27ms)
+			ProcessInitializeOnLoadAttributes (69ms)
+			ProcessInitializeOnLoadMethodAttributes (25ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,8 +117,8 @@ Domain Reload Profiling: 389ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.471 seconds
-Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.385 seconds
+Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -126,48 +126,78 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.451 seconds
-Domain Reload Profiling: 921ms
-	BeginReloadAssembly (102ms)
+- Finished resetting the current domain, in  0.417 seconds
+Domain Reload Profiling: 802ms
+	BeginReloadAssembly (89ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (15ms)
+		CreateAndSetChildDomain (14ms)
 	RebuildCommonClasses (18ms)
 	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (319ms)
-		LoadAssemblies (261ms)
+	initialDomainReloadingComplete (23ms)
+	LoadAllAssembliesAndSetupDomain (248ms)
+		LoadAssemblies (190ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (120ms)
-			TypeCache.Refresh (102ms)
-				TypeCache.ScanAssembly (91ms)
-			ScanForSourceGeneratedMonoScriptInfo (12ms)
+		AnalyzeDomain (111ms)
+			TypeCache.Refresh (94ms)
+				TypeCache.ScanAssembly (83ms)
+			ScanForSourceGeneratedMonoScriptInfo (11ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (451ms)
+	FinalizeReload (417ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (352ms)
+		SetupLoadedEditorAssemblies (327ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (4ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (40ms)
-			ProcessInitializeOnLoadAttributes (271ms)
-			ProcessInitializeOnLoadMethodAttributes (31ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			BeforeProcessingInitializeOnLoad (34ms)
+			ProcessInitializeOnLoadAttributes (256ms)
+			ProcessInitializeOnLoadMethodAttributes (28ms)
+			AfterProcessingInitializeOnLoad (3ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.13 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4930 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 74 unused Assets / (0.8 MB). Loaded Objects now: 5381.
-Memory consumption went from 196.1 MB to 195.3 MB.
-Total: 3.371900 ms (FindLiveObjects: 0.215200 ms CreateObjectMapping: 0.063700 ms MarkObjects: 2.815700 ms  DeleteObjects: 0.276600 ms)
+Unloading 4965 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 86 unused Assets / (2.5 MB). Loaded Objects now: 5423.
+Memory consumption went from 215.5 MB to 213.1 MB.
+Total: 3.521000 ms (FindLiveObjects: 0.259600 ms CreateObjectMapping: 0.082000 ms MarkObjects: 2.648900 ms  DeleteObjects: 0.529500 ms)
 
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 5063.047774 seconds.
+  path: Assets/MyMaterial/Sea/Demo/Scene_Demo.unity
+  artifactKey: Guid(b9031db6f2a0b7d4681586d26f819425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyMaterial/Sea/Demo/Scene_Demo.unity using Guid(b9031db6f2a0b7d4681586d26f819425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3455d1aeebbf8342bdf87525a830b36f') in 0.002032 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (2.4 MB). Loaded Objects now: 5423.
+Memory consumption went from 115.2 MB to 112.7 MB.
+Total: 3.091200 ms (FindLiveObjects: 0.300900 ms CreateObjectMapping: 0.070600 ms MarkObjects: 2.214200 ms  DeleteObjects: 0.504900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
@@ -184,164 +214,108 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 26412.692565 seconds.
-  path: Assets/MyMaterial/Sea/plane.fbx
-  artifactKey: Guid(4f3f86912e3cbf64d9f922c94cfce51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyMaterial/Sea/plane.fbx using Guid(4f3f86912e3cbf64d9f922c94cfce51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7bba452cfa444b9ffe2524c97ed63de') in 0.180935 seconds
+  Time since last request: 39.349714 seconds.
+  path: Assets/MyMaterial/Asset
+  artifactKey: Guid(72e1b9f894786ce41ab4b96521589085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyMaterial/Asset using Guid(72e1b9f894786ce41ab4b96521589085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab7e75e45481278904afdad2c8400744') in 0.007928 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 15.633809 seconds.
+  path: Assets/PureNature/Models/Vegetation/OakTrees/Textures/OakTree03_a.png
+  artifactKey: Guid(b9f0095d126ad1141accdd66725e0776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Vegetation/OakTrees/Textures/OakTree03_a.png using Guid(b9f0095d126ad1141accdd66725e0776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a45e000156216725f8eb004cd84d6284') in 0.046760 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.238793 seconds.
+  path: Assets/PureNature/Models/Vegetation/OakTrees/Textures/OakTree03_m.png
+  artifactKey: Guid(36a7b7b04d1b90d4f93e55d16914515e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Vegetation/OakTrees/Textures/OakTree03_m.png using Guid(36a7b7b04d1b90d4f93e55d16914515e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd85d400b18e6943bacc03dbb1384dc50') in 0.056266 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 19.309730 seconds.
+  path: Assets/PureNature/Models/Vegetation/Bushes/Textures/Materials/BushTrunk01.mat
+  artifactKey: Guid(243ee6bfa01a89c4e957dfb3cbb92f75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Vegetation/Bushes/Textures/Materials/BushTrunk01.mat using Guid(243ee6bfa01a89c4e957dfb3cbb92f75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01870ac674126764aa6cedbc75517d18') in 0.169866 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 40.474844 seconds.
+  path: Assets/PureNature/Prefabs/Fx/Butterflies.prefab
+  artifactKey: Guid(e06bf6988ac259546bdc50dc9d7c3333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Prefabs/Fx/Butterflies.prefab using Guid(e06bf6988ac259546bdc50dc9d7c3333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbb285adec017fe5ce8fb8ac90c43345') in 0.022590 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 9
 ========================================================================
 Received Import Request.
-  Time since last request: 19.887577 seconds.
-  path: Assets/MyMaterial/Sea/plane.fbx
-  artifactKey: Guid(4f3f86912e3cbf64d9f922c94cfce51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyMaterial/Sea/plane.fbx using Guid(4f3f86912e3cbf64d9f922c94cfce51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '687ae26eb4f3c2087e10094ef8689916') in 0.009872 seconds
+  Time since last request: 0.011125 seconds.
+  path: Assets/PureNature/Models/Rocks/Cliffs/Textures/Materials/Cliff01.mat
+  artifactKey: Guid(609893a5b12b83745aa90dd175cde4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Rocks/Cliffs/Textures/Materials/Cliff01.mat using Guid(609893a5b12b83745aa90dd175cde4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ef8f4ac27f144cb7087dbbfd58f24cd') in 0.157473 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 8
+Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
-  Time since last request: 13.020626 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Beak.mat
-  artifactKey: Guid(e52772856f0a8224796ac88a1193b8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Beak.mat using Guid(e52772856f0a8224796ac88a1193b8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0757d4aa42fd680b42ce2e5f706a8a68') in 0.017082 seconds
+  Time since last request: 0.000022 seconds.
+  path: Assets/PureNature/Models/Rocks/Cliffs/Textures/Cliff01_n.png
+  artifactKey: Guid(e2d95a07235fcb5479624d2545465e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Rocks/Cliffs/Textures/Cliff01_n.png using Guid(e2d95a07235fcb5479624d2545465e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1128bd8d68df1904c4371e9f801fc611') in 0.034328 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.020349 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Deep Water.mat
-  artifactKey: Guid(db3fab14a26ef7049973fad1268241b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Deep Water.mat using Guid(db3fab14a26ef7049973fad1268241b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bae361e46ed6cb0d3c51c62fefbf136') in 0.010415 seconds
+  Time since last request: 0.000036 seconds.
+  path: Assets/PureNature/Models/Rocks/Cliffs/Textures/Cliff02_a.png
+  artifactKey: Guid(c62db5b329a61e04b94a78a0fbae0576) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Rocks/Cliffs/Textures/Cliff02_a.png using Guid(c62db5b329a61e04b94a78a0fbae0576) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '745f5a500396cc3699e82333e254229c') in 0.026385 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.026189 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Fruit 1.mat
-  artifactKey: Guid(6aa61052ebbda5640813aec37eb6f5b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Fruit 1.mat using Guid(6aa61052ebbda5640813aec37eb6f5b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9e73d95676d18443bd874fb80fb194e') in 0.009346 seconds
+  Time since last request: 0.000039 seconds.
+  path: Assets/PureNature/Models/Rocks/Cliffs/Textures/Materials/Cliff02.mat
+  artifactKey: Guid(ead07fa83dae04c43883e5ef46b18f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Rocks/Cliffs/Textures/Materials/Cliff02.mat using Guid(ead07fa83dae04c43883e5ef46b18f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e83b1d3e321e8e3b2ed04b62ce7aeaf') in 0.100299 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
-  Time since last request: 0.025088 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Flower 1.mat
-  artifactKey: Guid(380454b11933bc645b7b17da58f3b9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Flower 1.mat using Guid(380454b11933bc645b7b17da58f3b9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92ac186f9c08c595c6a57420790124e2') in 0.008557 seconds
+  Time since last request: 0.000035 seconds.
+  path: Assets/PureNature/Prefabs/Rocks/Cliffs/Cliff01.prefab
+  artifactKey: Guid(52202b428c93675499f1d787e93be31b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Prefabs/Rocks/Cliffs/Cliff01.prefab using Guid(52202b428c93675499f1d787e93be31b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dd1d786ba2af9e8fa68a9d290ad7619') in 0.079922 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 17
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Sail.mat
-  artifactKey: Guid(6892cad091c09e74089dab0d64ee91af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Sail.mat using Guid(6892cad091c09e74089dab0d64ee91af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ff95da27bfe5a5ca5869cf49d4455e3') in 0.021734 seconds
+  Time since last request: 0.000060 seconds.
+  path: Assets/PureNature/Prefabs/Rocks/Cliffs/Cliff02.prefab
+  artifactKey: Guid(54d9f8a7e45bf2b45bd950c3d6602823) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Prefabs/Rocks/Cliffs/Cliff02.prefab using Guid(54d9f8a7e45bf2b45bd950c3d6602823) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd084aa1f6f03e3621edcd3e9b46b4ca') in 0.077715 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 17
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Sky.mat
-  artifactKey: Guid(2cffcbc3ab818f34b97930cd2018029f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Sky.mat using Guid(2cffcbc3ab818f34b97930cd2018029f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce70bffac37cea5e08c33f1c8dc95c4d') in 0.009269 seconds
+  Time since last request: 0.000046 seconds.
+  path: Assets/PureNature/Models/Rocks/Cliffs/Textures/Materials/Cliff02_Grass.mat
+  artifactKey: Guid(ead2f807086d68d42a0c1f85f28af90e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Rocks/Cliffs/Textures/Materials/Cliff02_Grass.mat using Guid(ead2f807086d68d42a0c1f85f28af90e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '589340c49999ba8a282975fa52950f59') in 0.088110 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 9
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Sand.mat
-  artifactKey: Guid(36cf94deba65e9c43bbb46573e3bc06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Sand.mat using Guid(36cf94deba65e9c43bbb46573e3bc06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bba17ff7b7e8a67a63d05414c5cb66d') in 0.013596 seconds
+  Time since last request: 0.000038 seconds.
+  path: Assets/PureNature/Models/Rocks/Cliffs/Textures/Materials/Cliff02_Snow.mat
+  artifactKey: Guid(ed9bebdf4bb19654da22cd729782875e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PureNature/Models/Rocks/Cliffs/Textures/Materials/Cliff02_Snow.mat using Guid(ed9bebdf4bb19654da22cd729782875e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff6631b3eb14666df4138658a6d093a8') in 0.091965 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Gull 2.mat
-  artifactKey: Guid(3e98cedf5e2ffbd48af17a25d7137745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Gull 2.mat using Guid(3e98cedf5e2ffbd48af17a25d7137745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f36d36d266e02d8e22fa73caa52fec3') in 0.006678 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/House 1.mat
-  artifactKey: Guid(2fb9919b62946ce418fb6ef0366d7a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/House 1.mat using Guid(2fb9919b62946ce418fb6ef0366d7a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41a3a25fb05e9237501e6f948bc1cdff') in 0.007538 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Leaves 1.mat
-  artifactKey: Guid(37bd71969a204c14d97ad69f32764007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Leaves 1.mat using Guid(37bd71969a204c14d97ad69f32764007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e564f7c4e8570dbd8fd448c8bb23c3a') in 0.005228 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Leaves.mat
-  artifactKey: Guid(784e8365145250b4faaa50110a6eae66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Leaves.mat using Guid(784e8365145250b4faaa50110a6eae66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac9c4dfcf7bea40bdc02f5f1fc3a1345') in 0.007563 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Wood 4.mat
-  artifactKey: Guid(c7ff693cfdd8dbc42a63b5c05cf60f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Wood 4.mat using Guid(c7ff693cfdd8dbc42a63b5c05cf60f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e4437af54b1669538f3706c2fd2ef6') in 0.007517 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Wood 3.mat
-  artifactKey: Guid(39a8ecf8cc9f43e44b25746d236c8c76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Wood 3.mat using Guid(39a8ecf8cc9f43e44b25746d236c8c76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77e3b03c4ca4faac5d7358d10701de08') in 0.006973 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Wood 2.mat
-  artifactKey: Guid(d4e0198bddb20134da42a3d613064891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Wood 2.mat using Guid(d4e0198bddb20134da42a3d613064891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90c9aeb69e638aad50a7c74ffda44153') in 0.005873 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Rock 1.mat
-  artifactKey: Guid(b55f9aed1459591468991ddb4b756b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Rock 1.mat using Guid(b55f9aed1459591468991ddb4b756b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a7615c58df1a28a395e0de9111ab72') in 0.006468 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Smoke.mat
-  artifactKey: Guid(2294328091a31fa4f86c33775e4c550e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Smoke.mat using Guid(2294328091a31fa4f86c33775e4c550e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '753aeb569b0a293c7d5e67953aa2be6a') in 0.006503 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Gull 1.mat
-  artifactKey: Guid(ca280723a042c08478eedf9f424e4b78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Gull 1.mat using Guid(ca280723a042c08478eedf9f424e4b78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec16242b951090844cbc1f32b886a73a') in 0.010915 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Java - Low Poly Islands/Contents/Materials/Sky 1.mat
-  artifactKey: Guid(6d19768bcab56ba4b811334f96be5af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Java - Low Poly Islands/Contents/Materials/Sky 1.mat using Guid(6d19768bcab56ba4b811334f96be5af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e52221332846bd06c071eb81d405dd') in 0.009086 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 9
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
 AssetImportWorker is now disconnected from the server

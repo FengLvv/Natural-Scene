@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{f04c45f0-56d3-f903-fd87-e61925d436ab}</ProjectGuid>
+    <ProjectGuid>{8077835a-cf53-4d5d-d80e-f9ec9426a445}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,78 +45,60 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\ComputeBufferTest.cs" />
-     <Compile Include="Assets\MyMaterial\Snow\DrawTrailToRT.cs" />
-     <Compile Include="Assets\Script\maoboli.cs" />
-     <Compile Include="Assets\Script\Volume\pp volume.cs" />
-     <Compile Include="Assets\Script\CustomRenderFeature.cs" />
-     <Compile Include="Assets\Script\official.cs" />
-     <Compile Include="Assets\Script\Noise\NoiseGeneratorEditor.cs" />
-     <Compile Include="Assets\MyMaterial\Sea\SetSeaCenter.cs" />
-     <Compile Include="Assets\Script\Noise\NoiseGenerator.cs" />
-     <Compile Include="Assets\FreeFlyCamera\Demo\Scripts\ToggleGameObjectEnable.cs" />
-     <Compile Include="Assets\Java - Low Poly Islands\Contents\Animation\Water.cs" />
-     <Compile Include="Assets\MyMaterial\Repo\Add Shader Template.cs" />
-     <Compile Include="Assets\FreeFlyCamera\Scripts\FreeFlyCamera.cs" />
-     <Compile Include="Assets\Script\Noise\ComputeTexture3D.cs" />
-     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\Script\Feature\URPOpaqueTextureToggler.cs" />
-     <Compile Include="Assets\Script\CustomRenderFeature1.cs" />
-     <Compile Include="Assets\Java - Low Poly Islands\Contents\Animation\BirdFollow.cs" />
-     <Compile Include="Assets\Script\Volume\TransformSize.cs" />
-     <Compile Include="Assets\Script\SmoothNormalTools.cs" />
-     <Compile Include="Assets\MyMaterial\Sea\DrawSeaReflection.cs" />
-     <Compile Include="Assets\Script\TestSubMesh.cs" />
-     <Compile Include="Assets\Script\Noise\ComputeTexture.cs" />
-     <Compile Include="Assets\Script\Feature\BlitTex.cs" />
+     <Compile Include="Assets\Sea\Scripts\BlitTex.cs" />
+     <Compile Include="Assets\AnyTrail\DataAndTools\AnyTrailStruct.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawFluid\DrawFluid.cs" />
+     <Compile Include="Assets\AnyTrail\Demo\RotateAroundMid.cs" />
+     <Compile Include="Assets\Sea\Scripts\move.cs" />
+     <Compile Include="Assets\AnyTrail\DataAndTools\TrailWriterAbstract.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawPattern\PatternWriter.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawTrail\TrailWriter.cs" />
+     <Compile Include="Assets\AnyTrail\AnyTrailCanvas.cs" />
+     <Compile Include="Assets\AnyTrail\PostEffectOnTrail\PostEffectOnTrail.cs" />
+     <Compile Include="Assets\Sea\Scripts\SeaControl.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawFluid\FluidWriter.cs" />
+     <Compile Include="Assets\AnyTrail\Demo\SetFrameRate.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawPattern\DrawPattern.cs" />
+     <Compile Include="Assets\Sea\Scripts\Reflection.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawTrailGO.cs" />
+     <Compile Include="Assets\AnyTrail\DataAndTools\AnyTrailDic.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawTrail\DrawTrail.cs" />
+     <Compile Include="Assets\AnyTrail\DataAndTools\CanvasComputerAbstract.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawWave\WaveWriter.cs" />
+     <Compile Include="Assets\AnyTrail\Effect\DrawWave\DrawWave.cs" />
+     <Compile Include="Assets\AnyTrail\Demo\BasicMove.cs" />
+     <Compile Include="Assets\Sea\Scripts\DrawCaustic.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Settings" />
-     <Folder Include="Assets\FreeFlyCamera\Demo\Scripts" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Boats" />
-     <Folder Include="Assets\Script\Volume" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Props" />
-     <Folder Include="Assets\Java - Low Poly Islands\Scenes\Large Island" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Particle FX" />
-     <Folder Include="Assets\Scenes" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Village\Pieces" />
-     <None Include="Assets\MyMaterial\Repo\PBR.hlsl" />
-     <Folder Include="Assets\MyMaterial\skybox" />
-     <Folder Include="Assets\Script" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Mesh" />
-     <Folder Include="Assets\Java - Low Poly Islands\PostFX" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Materials" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Islands\Beach Islands" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Animation" />
-     <Folder Include="Assets\MyMaterial\Repo" />
-     <Folder Include="Assets\FreeFlyCamera\Scripts" />
-     <Folder Include="Assets\FreeFlyCamera" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs" />
-     <Folder Include="Assets\Java - Low Poly Islands\Scenes" />
-     <None Include="Assets\MyMaterial\Cloud\Mesh cloud\Mesh cloud.shader" />
-     <Folder Include="Assets\MyMaterial" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Islands\Tropical Mountain Islands" />
-     <Folder Include="Assets\Script\Noise" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Islands" />
-     <Folder Include="Assets\MyMaterial\Cloud\Parallax cloud" />
-     <Folder Include="Assets\MyMaterial\Sea" />
-     <Folder Include="Assets\TutorialInfo\Scripts" />
-     <Folder Include="Assets\TutorialInfo\Icons" />
-     <Folder Include="Assets\TutorialInfo" />
-     <Folder Include="Assets\My scene" />
-     <None Include="Assets\Java - Low Poly Islands\PostFX\README.txt" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Village" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Islands\Volcanic Islands" />
-     <Folder Include="Assets\Script\Feature" />
-     <Folder Include="Assets\MyMaterial\Snow" />
-     <Folder Include="Assets\FreeFlyCamera\Demo" />
-     <Folder Include="Assets\MyMaterial\Cloud" />
-     <Folder Include="Assets\MyMaterial\Cloud\Mesh cloud" />
-     <Folder Include="Assets\Java - Low Poly Islands" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents" />
-     <None Include="Assets\MyMaterial\Sea\Sea.shader" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Rocks" />
-     <Folder Include="Assets\Java - Low Poly Islands\Contents\Prefabs\Vegetation" />
-     <None Include="Assets\MyMaterial\Cloud\Parallax cloud\Parallax cloud.shader" />
+     <Folder Include="Assets\AnyTrail\Resources" />
+     <Folder Include="Assets\AnyTrail\Effect\DrawPattern" />
+     <Folder Include="Assets\Sea\Prefab" />
+     <Folder Include="Assets\Sea\Demo\Asset" />
+     <None Include="Assets\AnyTrail\Resources\PattenCompute.compute" />
+     <Folder Include="Assets\Sea\Shader&amp;Material" />
+     <None Include="Assets\Sea\Shader&amp;Material\PBR.hlsl" />
+     <None Include="Assets\Sea\Shader&amp;Material\Caustic.shader" />
+     <None Include="Assets\AnyTrail\Resources\MoveCanvas.compute" />
+     <Folder Include="Assets\AnyTrail\Effect" />
+     <None Include="Assets\AnyTrail\Demo\AnyTrailDemo.shader" />
+     <Folder Include="Assets\AnyTrail" />
+     <None Include="Assets\AnyTrail\DataAndTools\AnyTrailComputeInclude.hlsl" />
+     <Folder Include="Assets\AnyTrail\DataAndTools" />
+     <Folder Include="Assets\AnyTrail\Effect\DrawFluid" />
+     <None Include="Assets\AnyTrail\AnyTrailShaderInclude.hlsl" />
+     <None Include="Assets\AnyTrail\Resources\NSCompute.compute" />
+     <Folder Include="Assets\AnyTrail\Effect\DrawWave" />
+     <Folder Include="Assets\Sea" />
+     <Folder Include="Assets\AnyTrail\Demo" />
+     <None Include="Assets\AnyTrail\Resources\WavesCompute.compute" />
+     <None Include="Assets\AnyTrail\Resources\TrailCompute.compute" />
+     <Folder Include="Assets\Sea\Textures" />
+     <None Include="Assets\AnyTrail\Resources\PostEffect.compute" />
+     <Folder Include="Assets\Sea\Demo" />
+     <Folder Include="Assets\Sea\Scripts" />
+     <Folder Include="Assets\AnyTrail\PostEffectOnTrail" />
+     <None Include="Assets\Sea\Shader&amp;Material\Sea.shader" />
+     <Folder Include="Assets\AnyTrail\Effect\DrawTrail" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -367,7 +349,7 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\PackageCache\com.unity.visualscripting@1.9.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\PackageCache\com.unity.visualscripting@1.9.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -736,103 +718,103 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Runtime">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ShaderGraph.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="PPv2URPConverters">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Searcher.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Editor">
-     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Natural Scene\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+     <HintPath>E:\Study\Unity Study\SRP Study\Natural scene\Sea\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,50 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel DrawTrail
+#pragma kernel DisappearGradually
+
+#include "../DataAndTools/AnyTrailComputeInclude.hlsl"
+RWTexture2D<float> _TrailRT;
+Texture2D<float> _PatternTex;
+
+float2 pos;
+float radius;
+float2 direction;
+float intensity;
+int sampleRadius;
+int patternRadius;
+float disappearStep;
+
+//sampleRadius = 1.414 * radius
+//id=2sampleRadius
+[numthreads(8,8,1)]
+void DrawTrail(uint3 id : SV_DispatchThreadID)
+{
+    //以pos为中心，计算采样点的位置
+    float2 samplePos = float2(-sampleRadius, -sampleRadius) + id.xy;
+
+    float2 newPos = samplePos;
+    if (direction.x != 0 || direction.y != 0)
+    {
+        direction = normalize(direction);
+        float2x2 rotationInvMatrix = float2x2(direction.y, -direction.x, direction.x, direction.y);
+        newPos = mul(rotationInvMatrix, samplePos);
+    }
+
+    float2 calculatePos = newPos / float2(radius, radius) * 0.5 + 0.5;
+    //找到采样点在pattern中的位置
+    float2 patternPos = calculatePos * patternRadius * 2;
+    //采样pattern        
+    float result = sampleBilinearInterpolation(patternPos, _PatternTex) * intensity / 100;
+    //写入到trailRT
+    //计算在RT中的位置
+    float2 rtPos = pos - sampleRadius + id.xy;
+    float trail = _TrailRT[rtPos.xy];
+    // float trail = _TrailRT[rtPos.xy];
+    _TrailRT[rtPos.xy] = max(result, trail);
+}
+
+[numthreads(8,8,1)]
+void DisappearGradually(uint3 id : SV_DispatchThreadID)
+{
+    _TrailRT[id.xy]= max(_TrailRT[id.xy] - disappearStep.x,0);;
+}
